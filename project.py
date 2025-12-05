@@ -1,24 +1,19 @@
 from tkinter import *
 import requests
 root = Tk()
+api = requests.get(f"https://api.frankfurter.dev/v1/latest?base=USD")
+data = api.json()
 
-def getPoke(poke):
-    response = requests.get(f"https://api.frankfurter.dev/v1/latest{poke.lower()}")
-    if response.status_code != 200:
-        print("Error fetching data!")
-        return None
-    
-    data = response.json()
-    return {
-        "name": data["name"],
-        "height": data["height"],
-        "weight": data["weight"],
-        "types": [t["type"]["name"] for t in data["types"]]
-    }
+#def convert():
+ #   for i in api:
+  #      if choose.get == i[api]:
+        
 
-pokemon = getPoke("Bulbasaur")
-print(pokemon)
+choose_currency = Entry(root, width = 10, borderwidth = 2)
+currency_input = Label(root, text = "Input a currency you would like to convert USD to:", font = "Arial")
 
+choose_currency.grid(row = 1, column = 0)
+choose_currency.grid(row = 0, column = 0)
 
 
 
