@@ -47,7 +47,25 @@ def darkmode():
         bg="#354266"
         )
 
-
+def lightmode():
+    root.configure(
+        bg="white"
+        )
+    
+    currency_input.config(
+        fg="black",
+        bg="white"
+        )
+    
+    amt_label.config(
+        fg="black", 
+        bg="white"
+        )
+    
+    result_label.config(
+        fg="black", 
+        bg="white"
+        )
 
 
 
@@ -96,6 +114,14 @@ darkmode_button = customtkinter.CTkButton(
     width = 10
     ) 
 
+lightmode_button = customtkinter.CTkButton(
+    root,
+    text = "Lightmode",
+    command = lightmode,
+    corner_radius= 10,
+    width = 10
+)
+
 
 # placement
 currency_input.grid(
@@ -128,9 +154,16 @@ result_label.grid(
     row=5, 
     column=0
     )
+
 darkmode_button.grid(
     row = 6, 
     column = 0
     )
+
+lightmode_button.grid(
+    row = 6,
+    column = 0,
+    sticky= "W"
+)
 
 root.mainloop()
