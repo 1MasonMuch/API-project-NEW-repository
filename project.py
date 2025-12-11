@@ -28,48 +28,109 @@ def convert():
 
     
 def darkmode():
-    root.configure(bg='#354266')
-    currency_input = Label(root, text="Currency to convert USD → ?", font=("Arial", 14))
-    choose_currency = Entry(root, width=10, borderwidth=2)
-
-    amt_label = Label(root, text="Amount in USD:")
-    amt_entry = Entry(root, width=10, borderwidth=2)
-
-    submit = customtkinter.CTkButton(root, text="Submit", command=convert, corner_radius= 10)
-    result_label = Label(root, text="", font=("Arial", 12))
+    root.configure(
+        bg="#354266"
+        )
     
-    currency_input.grid(row=0, column=0)
-    choose_currency.grid(row=1, column=0)
+    currency_input.config(
+        fg="white",
+        bg="#354266"
+        )
+    
+    amt_label.config(
+        fg="white", 
+        bg="#354266"
+        )
+    
+    result_label.config(
+        fg="white", 
+        bg="#354266"
+        )
 
-    amt_label.grid(row=2, column=0)
-    amt_entry.grid(row=3, column=0)
-
-    submit.grid(row=4, column=0, pady=10)
-    result_label.grid(row=5, column=0)
 
 
 
 
+# widgets
+currency_input = Label(
+    root, 
+    text="Currency to convert USD → ?", 
+    font=("Arial", 14)
+    )
 
+choose_currency = Entry(
+    root, 
+    width=10, 
+    borderwidth=2
+    )
 
-# Widgets
-currency_input = Label(root, text="Currency to convert USD → ?", font=("Arial", 14))
-choose_currency = Entry(root, width=10, borderwidth=2)
+amt_label = Label(
+    root, 
+    text="Amount in USD:"
+    )
 
-amt_label = Label(root, text="Amount in USD:")
-amt_entry = Entry(root, width=10, borderwidth=2)
+amt_entry = Entry(
+    root, 
+    width=10, 
+    borderwidth=2
+    )
 
-submit = customtkinter.CTkButton(root, text="Submit", command=convert, corner_radius= 10)
-result_label = Label(root, text="", font=("Arial", 12))
+submit = customtkinter.CTkButton(
+    root, 
+    text="Submit", 
+    command=convert, 
+    corner_radius= 10
+    )
+
+result_label = Label(
+    root, 
+    text="", 
+    font=("Arial", 12)
+    )
+
+darkmode_button = customtkinter.CTkButton(
+    root, 
+    text = "Darkmode", 
+    command= darkmode, 
+    corner_radius= 10, 
+    width = 10
+    ) 
+
 
 # placement
-currency_input.grid(row=0, column=0)
-choose_currency.grid(row=1, column=0)
+currency_input.grid(
+    row=0, 
+    column=0
+    )
 
-amt_label.grid(row=2, column=0)
-amt_entry.grid(row=3, column=0)
+choose_currency.grid(
+    row=1, 
+    column=0
+    )
 
-submit.grid(row=4, column=0, pady=10)
-result_label.grid(row=5, column=0)
+amt_label.grid(
+    row=2, 
+    column=0
+    )
+
+amt_entry.grid(
+    row=3, 
+    column=0
+    )
+
+submit.grid(
+    row=4, 
+    column=0, 
+    pady=10
+    )
+
+result_label.grid(
+    row=5, 
+    column=0
+    )
+darkmode_button.grid(
+    row = 6, 
+    column = 0
+    )
 
 root.mainloop()
