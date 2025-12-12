@@ -1,5 +1,4 @@
 from tkinter import *
-import ttkbootstrap as ttk
 import customtkinter
 import requests
 
